@@ -7,6 +7,6 @@ class CachedS3Storage(CachedFilesMixin, S3BotoStorage):
     pass
 
 StaticStorage = lambda: CachedS3Storage(location=settings.STATIC_URL, custom_domain=settings.STATIC_DOMAIN)
-MediaStorage  = lambda: S3BotoStorage(location=setting.MEDIA_URL, custom_domain=settings.MEDIA_DOMAIN, headers={
+MediaStorage  = lambda: S3BotoStorage(location=settings.MEDIA_URL, custom_domain=settings.MEDIA_DOMAIN, headers={
         'Cache-Control': 'max-age=2147483648',
     })
