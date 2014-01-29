@@ -71,7 +71,7 @@ if M.STORAGE_LOCAL or DEBUG:
 else:
     STATICFILES_STORAGE = PROJECT_NAME + '.conf.storage.StaticStorage'
 
-STATIC_URL = '/static/' + PROJECT_NAME
+STATIC_URL = '/static/%s/)' % (PROJECT_NAME, )
 
 STATIC_ROOT = os.path.join(VAR_ROOT, STATIC_URL )
 
@@ -91,7 +91,7 @@ if M.STORAGE_LOCAL or DEBUG:
 else:
     DEFAULT_FILE_STORAGE = PROJECT_NAME + '.conf.storage.MediaStorage'
 
-MEDIA_URL = '/uploads/' + PROJECT_NAME
+MEDIA_URL = '/uploads/%s/' % (PROJECT_NAME, )
 
 MEDIA_ROOT = os.path.join(VAR_ROOT, MEDIA_URL)
 
